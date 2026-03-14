@@ -20,7 +20,7 @@ $results = '';
       redirect('sales_report.php', false);
     endif;
 
-  } else {
+  } else { 
     $session->msg("d", "Select dates");
     redirect('sales_report.php', false);
   }
