@@ -119,10 +119,13 @@ $results = '';
          </tr>
         </tfoot>
       </table>
+      <div style="text-align: center; margin-top: 20px;">
+        <button onclick="window.location.href='sales_report.php'" class="btn btn-primary">Back to Sales Report</button>
+      </div>
     </div>
   <?php
     else:
-        echo "<div class='page-break'><div class='sale-head'><h1>Inventory Management System - Sales Report</h1><strong>No sales found for the selected date range.</strong></div></div>";
+        echo "<div class='page-break'><div class='sale-head'><h1>Inventory Management System - Sales Report</h1><strong>No sales found for the selected date range.</strong></div><div style='text-align: center; margin-top: 20px;'><button onclick=\"window.location.href='sales_report.php'\" class='btn btn-primary'>Back to Sales Report</button></div></div>";
      endif;
   ?>
 </body>
