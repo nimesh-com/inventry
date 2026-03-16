@@ -20,7 +20,7 @@ $results = '';
       redirect('sales_report.php', false);
     endif;
 
-  } else {
+  } else { 
     $session->msg("d", "Select dates");
     redirect('sales_report.php', false);
   }
@@ -107,22 +107,25 @@ $results = '';
                 <h6><?php echo remove_junk(ucfirst($result['product_name']));?></h6>
               </td>
               <td class="text-right"><?php echo (int)$result['qty'];?></td>
-              <td class="text-right"><?php echo number_format($result['price'], 2);?></td>
-              <td class="text-right"><?php echo number_format($result['total'], 2);?></td>
+              <td class="text-right"><?php echo CURRENCY; ?><?php echo number_format($result['price'], 2);?></td>
+              <td class="text-right"><?php echo CURRENCY; ?><?php echo number_format($result['total'], 2);?></td>
           </tr>
         <?php endforeach; ?>
         </tbody>
         <tfoot>
          <tr class="text-right">
            <td colspan="5">Grand Total</td>
-           <td> $<?php echo number_format($grand_total, 2);?></td>
+           <td><?php echo CURRENCY; ?><?php echo number_format($grand_total, 2);?></td>
          </tr>
         </tfoot>
       </table>
+      <div style="text-align: center; margin-top: 20px;">
+        <button onclick="window.location.href='sales_report.php'" class="btn btn-primary">Back to Sales Report</button>
+      </div>
     </div>
   <?php
     else:
-        echo "<div class='page-break'><div class='sale-head'><h1>Inventory Management System - Sales Report</h1><strong>No sales found for the selected date range.</strong></div></div>";
+        echo "<div class='page-break'><div class='sale-head'><h1>Inventory Management System - Sales Report</h1><strong>No sales found for the selected date range.</strong></div><div style='text-align: center; margin-top: 20px;'><button onclick=\"window.location.href='sales_report.php'\" class='btn btn-primary'>Back to Sales Report</button></div></div>";
      endif;
   ?>
 </body>

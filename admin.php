@@ -14,7 +14,6 @@
  $c_inventory_sales = count_by_id('sales_inventory');
  $products_sold   = find_higest_saleing_product('10');
  $recent_products = find_recent_product_added('5');
- $recent_sales    = find_recent_inventory_sale_added('5')
 ?>
 <?php include_once('layouts/header.php'); ?>
 
@@ -117,30 +116,30 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <strong>
-            <span class="glyphicon glyphicon-usd"></span>
-            <span>Latest Inventory Sales</span>
+            <span class="glyphicon glyphicon-briefcase"></span>
+            <span>Main Stock Summary</span>
           </strong>
         </div>
         <div class="panel-body">
           <table class="table table-striped table-bordered table-condensed">
        <thead>
          <tr>
-           <th class="text-center" style="width: 50px;">#</th>
-           <th>Product Name</th>
-           <th>Shop</th>
-           <th>Total Sale</th>
+           <th>Product</th>
+           <th>Quantity</th>
+           <th>Price</th>
          </tr>
        </thead>
        <tbody>
-         <?php foreach ($recent_sales as  $recent_sale): ?>
+         <?php
+         $main_stock_items = find_by_sql("SELECT product_name, quantity, price FROM main_stock ORDER BY quantity DESC LIMIT 5");
+         foreach ($main_stock_items as $item): 
+         ?>
          <tr>
-           <td class="text-center"><?php echo count_id();?></td>
-           <td><?php echo remove_junk(first_character($recent_sale['name'])); ?></td>
-           <td><?php echo remove_junk($recent_sale['shop_name']); ?></td>
-           <td>$<?php echo remove_junk($recent_sale['price'] * $recent_sale['qty']); ?></td>
+           <td><?php echo remove_junk($item['product_name']); ?></td>
+           <td><?php echo (int)$item['quantity']; ?></td>
+           <td><?php echo CURRENCY; ?><?php echo number_format($item['price'], 2); ?></td>
         </tr>
-
-       <?php endforeach; ?>
+         <?php endforeach; ?>
        </tbody>
      </table>
     </div>

@@ -14,7 +14,7 @@ $page_title = 'Sale Report';
   <div class="col-md-6">
     <div class="panel">
       <div class="panel-heading">
-
+        <strong>Custom Date Range Report</strong>
       </div>
       <div class="panel-body">
           <form class="clearfix" method="post" action="sale_report_process.php">
