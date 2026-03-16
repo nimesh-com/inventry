@@ -17,4 +17,10 @@
   define( 'DB_PASS', '' );             // Set database password
   define( 'DB_NAME', 'inventory_system' );        // Set database name
 
+  // Set timezone to Sri Lanka
+  date_default_timezone_set('Asia/Colombo');
+
+  // Set currency symbol
+  define('CURRENCY', 'Rs');
+
 ?>

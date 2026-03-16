@@ -37,12 +37,6 @@
    </ul>
   </li>
   <li>
-    <a href="media.php" >
-      <i class="glyphicon glyphicon-picture"></i>
-      <span>Media Files</span>
-    </a>
-  </li>
-  <li>
     <a href="#" class="submenu-toggle">
       <i class="glyphicon glyphicon-duplicate"></i>
        <span>Sales Report</span>

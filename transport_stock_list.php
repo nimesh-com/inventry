@@ -54,11 +54,14 @@
                 <td><?php echo (int)$row['available_qty']; ?></td>
                 <td><?php echo read_date($row['transfer_date']); ?></td>
                 <td>
-                  <?php if($row['available_qty'] > 0): ?>
-                    <a href="add_sale_inventory.php?product_id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger">Sell</a>
-                  <?php else: ?>
-                    <span class="text-muted">Out of Stock</span>
-                  <?php endif; ?>
+                  <div class="btn-group">
+                    <?php if($row['available_qty'] > 0): ?>
+                      <a href="add_sale_inventory.php?product_id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger">Sell</a>
+                    <?php else: ?>
+                      <span class="text-muted">Out of Stock</span>
+                    <?php endif; ?>
+                    <a href="delete_transport_stock.php?id=<?php echo (int)$row['id']; ?>" class="btn btn-sm btn-warning">Delete</a>
+                  </div>
                 </td>
               </tr>
               <?php endwhile; ?>

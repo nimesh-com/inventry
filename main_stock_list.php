@@ -52,10 +52,14 @@
                 <td><?php echo remove_junk($row['product_name']); ?></td>
                 <td><?php echo remove_junk($row['product_code']); ?></td>
                 <td><?php echo (int)$row['quantity']; ?></td>
-                <td><?php echo number_format($row['price'], 2); ?></td>
+                <td><?php echo CURRENCY; ?><?php echo number_format($row['price'], 2); ?></td>
                 <td><?php echo read_date($row['created_date']); ?></td>
                 <td>
-                  <a href="transfer_to_transport.php?product_id=<?php echo $row['id']; ?>" class="btn btn-sm btn-primary">Transfer</a>
+                  <div class="btn-group">
+                    <a href="edit_main_stock.php?id=<?php echo (int)$row['id']; ?>" class="btn btn-sm btn-info">Edit</a>
+                    <a href="delete_main_stock.php?id=<?php echo (int)$row['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="transfer_to_transport.php?product_id=<?php echo $row['id']; ?>" class="btn btn-sm btn-primary">Transfer</a>
+                  </div>
                 </td>
               </tr>
               <?php endwhile; ?>
