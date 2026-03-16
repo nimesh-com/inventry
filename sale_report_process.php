@@ -107,15 +107,15 @@ $results = '';
                 <h6><?php echo remove_junk(ucfirst($result['product_name']));?></h6>
               </td>
               <td class="text-right"><?php echo (int)$result['qty'];?></td>
-              <td class="text-right"><?php echo number_format($result['price'], 2);?></td>
-              <td class="text-right"><?php echo number_format($result['total'], 2);?></td>
+              <td class="text-right"><?php echo CURRENCY; ?><?php echo number_format($result['price'], 2);?></td>
+              <td class="text-right"><?php echo CURRENCY; ?><?php echo number_format($result['total'], 2);?></td>
           </tr>
         <?php endforeach; ?>
         </tbody>
         <tfoot>
          <tr class="text-right">
            <td colspan="5">Grand Total</td>
-           <td> $<?php echo number_format($grand_total, 2);?></td>
+           <td><?php echo CURRENCY; ?><?php echo number_format($grand_total, 2);?></td>
          </tr>
         </tfoot>
       </table>

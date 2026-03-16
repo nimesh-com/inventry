@@ -71,8 +71,8 @@
                 <td><?php echo remove_junk($row['shop_name']); ?></td>
                 <td><?php echo remove_junk($row['product_name']); ?></td>
                 <td><?php echo (int)$row['qty']; ?></td>
-                <td><?php echo number_format($row['price'], 2); ?></td>
-                <td><?php echo number_format($row['total'], 2); ?></td>
+                <td><?php echo CURRENCY; ?><?php echo number_format($row['price'], 2); ?></td>
+                <td><?php echo CURRENCY; ?><?php echo number_format($row['total'], 2); ?></td>
                 <td><?php echo read_date($row['sale_date']); ?></td>
               </tr>
               <?php endwhile; ?>
@@ -80,7 +80,7 @@
             <tfoot>
               <tr>
                 <th colspan="4" style="text-align:right;">Total Sales:</th>
-                <th><?php echo number_format($total_sales, 2); ?></th>
+                <th><?php echo CURRENCY; ?><?php echo number_format($total_sales, 2); ?></th>
                 <th></th>
               </tr>
             </tfoot>
