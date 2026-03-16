@@ -119,6 +119,9 @@ $results = '';
          </tr>
         </tfoot>
       </table>
+      <div style="text-align: center; margin-top: 20px;">
+        <button onclick="window.location.href='sales_report_inventory.php'" class="btn btn-primary">Back to Sales Report</button>
+      </div>
     </div>
   <?php
     else:

@@ -14,21 +14,6 @@ $page_title = 'Sale Report';
   <div class="col-md-6">
     <div class="panel">
       <div class="panel-heading">
-        <strong>Quick Reports</strong>
-      </div>
-      <div class="panel-body">
-        <div class="btn-group">
-          <a href="daily_sales.php" class="btn btn-info">Daily Sales</a>
-          <a href="monthly_sales.php" class="btn btn-warning">Monthly Sales</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
-    <div class="panel">
-      <div class="panel-heading">
         <strong>Custom Date Range Report</strong>
       </div>
       <div class="panel-body">
