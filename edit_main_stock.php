@@ -21,8 +21,9 @@ if(!$main_stock){
        $p_code  = remove_junk($db->escape($_POST['product_code']));
        $p_qty   = remove_junk($db->escape($_POST['quantity']));
        $p_price = remove_junk($db->escape($_POST['price']));
+       $date    = make_date();
        $query   = "UPDATE main_stock SET";
-       $query  .=" product_name ='{$p_name}', product_code ='{$p_code}', quantity ='{$p_qty}', price ='{$p_price}'";
+       $query  .=" product_name ='{$p_name}', product_code ='{$p_code}', quantity ='{$p_qty}', price ='{$p_price}', created_date ='{$date}'";
        $query  .=" WHERE id ='{$main_stock['id']}'";
        $result = $db->query($query);
                if($result && $db->affected_rows() === 1){

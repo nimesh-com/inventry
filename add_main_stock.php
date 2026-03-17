@@ -18,7 +18,8 @@
        $id = (int)$_POST['main_stock_select'];
        $p_qty   = remove_junk($db->escape($_POST['quantity']));
        $p_price = remove_junk($db->escape($_POST['price']));
-       $query = "UPDATE main_stock SET quantity = quantity + {$p_qty}, price = '{$p_price}' WHERE id = {$id}";
+       $date    = make_date();
+       $query = "UPDATE main_stock SET quantity = quantity + {$p_qty}, price = '{$p_price}', created_date = '{$date}' WHERE id = {$id}";
        $msg = "Main stock updated ";
      } else {
        $p_name  = remove_junk($db->escape($_POST['product_name']));
